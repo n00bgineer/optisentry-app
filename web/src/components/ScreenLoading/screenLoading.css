@@ -1,0 +1,17 @@
+@media screen and (max-width: 1300px) {
+  .screen-loading-subcontainer{
+    width: 60%;
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  .screen-loading-subcontainer{
+    width: 70%;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .screen-loading-subcontainer{
+    width: 80%;
+  }
+}
