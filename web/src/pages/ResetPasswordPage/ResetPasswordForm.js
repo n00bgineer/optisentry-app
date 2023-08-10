@@ -58,7 +58,7 @@ const ResetPasswordForm = () => {
       // VALIDATING EMAIL VALUE
       if (!validateEmail(event.target.value.trim())) {
         setEmailErrorText(
-          'The e-mail address is not in the required format (e.g. harrypotter@hogwarts.edu)'
+          'The e-mail address is not in the required format (e.g. harry.potter@hogwarts.edu)'
         )
       }
       // VALIDATING EMAIL LENGTH
@@ -98,7 +98,7 @@ const ResetPasswordForm = () => {
       </Box>
       <form className="auth-form signup-form" onSubmit={submitForm}>
         <Input
-          placeholder="Email"
+          placeholder="harry.potter@hogwarts.com"
           required={true}
           startAdornment={<Email />}
           fullWidth={true}
@@ -108,7 +108,7 @@ const ResetPasswordForm = () => {
           color={emailErrorText !== '' ? 'error' : 'primary'}
           onInput={setEmailField}
           errorText={emailErrorText}
-          label="email"
+          label="Enter your e-mail address"
         />
         <Button
           type="submit"
@@ -118,7 +118,7 @@ const ResetPasswordForm = () => {
           color="primary"
           margin="medium"
         >
-          Sign up
+          Reset your password
         </Button>
         {submitErrorText !== '' && (
           <Alert fullWidth={true} margin="medium" severity="error">

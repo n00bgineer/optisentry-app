@@ -168,7 +168,7 @@ const SigninForm = () => {
       // VALIDATING EMAIL VALUE
       if (!validateEmail(event.target.value.trim())) {
         setEmailErrorText(
-          'e-mail address is not in the required format (e.g. harrypotter@hogwarts.edu)'
+          'e-mail address is not in the required format (e.g. harry.potter@hogwarts.edu)'
         )
       }
       // VALIDATING EMAIL LENGTH
@@ -237,8 +237,8 @@ const SigninForm = () => {
           Welcome back
         </Typography>
         <Typography variant="body1" className="auth-form-subtitle">
-          Log in to OptiSentry to generate reports, explore performance metrics,
-          and take control of your application&rsquo;s success
+          Log in to your OptiSentry account to view your applications'
+          performance and security data
         </Typography>
       </Box>
       <form className="auth-form signup-form" onSubmit={submitForm}>
@@ -256,21 +256,21 @@ const SigninForm = () => {
         </Button>
         <Typography className="auth-separator">or</Typography>
         <Input
-          placeholder="Email"
+          placeholder="harry.potter@hogwarts.com"
           required={true}
           startAdornment={<Email />}
           fullWidth={true}
           type="email"
           value={email}
-          margin="large"
+          margin="medium"
           color={emailErrorText !== '' ? 'error' : 'primary'}
           onInput={setEmailField}
           errorText={emailErrorText}
           disabled={loading || isAuthInProcess}
-          label="email"
+          label="Enter your e-mail address"
         />
         <Input
-          placeholder="Password"
+          placeholder="voldemort_sucks"
           required={true}
           startAdornment={<Lock />}
           value={password}
@@ -286,7 +286,7 @@ const SigninForm = () => {
           onInput={setPasswordField}
           errorText={passwordErrorText}
           disabled={loading || isAuthInProcess}
-          label="password"
+          label="Enter your password"
         />
         <Typography variant="body2" className="auth-link forgot-password-link">
           <Link

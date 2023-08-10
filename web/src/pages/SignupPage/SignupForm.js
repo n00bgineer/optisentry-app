@@ -169,7 +169,7 @@ const SignupForm = () => {
       // VALIDATING EMAIL VALUE
       if (!validateEmail(event.target.value.trim())) {
         setEmailErrorText(
-          'The e-mail address is not in the required format (e.g. harrypotter@hogwarts.edu)'
+          'The e-mail address is not in the required format (e.g. harry.potter@hogwarts.edu)'
         )
       }
       // VALIDATING EMAIL LENGTH
@@ -240,8 +240,8 @@ const SignupForm = () => {
           Create an account
         </Typography>
         <Typography variant="body1" className="auth-form-subtitle">
-          Sign up to OptiSentry for effortless application monitoring, actionable
-          insights, and improved performance optimization
+          Sign up for a free account to start monitoring your applications'
+          performance and security with OptiSentry
         </Typography>
       </Box>
       <form className="auth-form signup-form" onSubmit={submitForm}>
@@ -259,21 +259,21 @@ const SignupForm = () => {
         </Button>
         <Typography className="auth-separator">or</Typography>
         <Input
-          placeholder="Email"
+          placeholder="harry.potter@hogwarts.com"
           required={true}
           startAdornment={<Email />}
           fullWidth={true}
           type="email"
           value={email}
-          margin="large"
+          margin="medium"
           color={emailErrorText !== '' ? 'error' : 'primary'}
           onInput={setEmailField}
           errorText={emailErrorText}
           disabled={loading || isAuthInProcess}
-          label="email"
+          label="Enter your e-mail address"
         />
         <Input
-          placeholder="Password"
+          placeholder="voldemort_sucks"
           required={true}
           startAdornment={<Lock />}
           value={password}
@@ -289,7 +289,7 @@ const SignupForm = () => {
           onInput={setPasswordField}
           errorText={passwordErrorText}
           disabled={loading || isAuthInProcess}
-          label="password"
+          label="Enter your password"
         />
         <Button
           type="submit"
@@ -300,7 +300,7 @@ const SignupForm = () => {
           margin="large"
           disabled={loading || isAuthInProcess}
         >
-          {isAuthInProcess ? 'Signing in ...' : 'Sign up'}
+          {isAuthInProcess ? 'Creating your account ...' : 'Create an account'}
         </Button>
         {submitErrorText !== '' && (
           <Alert fullWidth={true} margin="medium" severity="error">
