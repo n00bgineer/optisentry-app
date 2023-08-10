@@ -9,6 +9,7 @@ const CustomTab = styled(MuiTab)(({ theme }) => ({
     borderRadius: '9999px',
     textTransform: 'none',
     minHeight: 'unset',
+    color: '#000',
   },
 
   // TEXT STYLES
