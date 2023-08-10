@@ -1,5 +1,5 @@
 // IMPORTING PACKAGES/MODULES// IMPORTING PACKAGES/MODULES
-import { Box, Typography } from '@mui/material'
+import { Box, Typography, useMediaQuery } from '@mui/material'
 
 import './onboardingModal.css'
 import 'src/pages/SignupPage/authPage.css'
@@ -7,6 +7,9 @@ import 'src/pages/SignupPage/authPage.css'
 import OnboardingForm from '../OnboardingForm/OnboardingForm'
 
 const OnboardingModal = () => {
+  // SETTING MEDIA QUERY
+  const isSmallDesktopViewport = useMediaQuery('(max-width:1200px)')
+
   return (
     <Box
       className="full-modal onboarding-modal"
@@ -37,7 +40,11 @@ const OnboardingModal = () => {
         }}
       >
         <img
-          src="https://res.cloudinary.com/dgu9rv3om/image/upload/v1691673204/optisentry/report_dark_desktop.png"
+          src={
+            isSmallDesktopViewport
+              ? 'https://res.cloudinary.com/dgu9rv3om/image/upload/v1691673465/optisentry/report_dark_mobile.png'
+              : 'https://res.cloudinary.com/dgu9rv3om/image/upload/v1691673204/optisentry/report_dark_desktop.png'
+          }
           alt="Report screenshot"
           className="onboarding-visual-image"
         />

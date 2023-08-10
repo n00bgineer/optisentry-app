@@ -58,7 +58,8 @@
     width: 45%;
   }
   .onboarding-visual-container > .onboarding-visual-image{
-    margin-right: -225%;
+    height: 85%;
+    margin-right: 0%;
   }
 }
 
@@ -69,9 +70,6 @@
   }
   .onboarding-visual-container{
     width: 45%;
-  }
-  .onboarding-visual-container > .onboarding-visual-image{
-    margin-right: -275%;
   }
 }
 
