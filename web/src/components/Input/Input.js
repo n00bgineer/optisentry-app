@@ -1,5 +1,6 @@
 // IMPORTING PACKAGES/MODULES
 import {
+  InputLabel,
   Box as MuiBox,
   FormHelperText as MuiFormHelperText,
   OutlinedInput as MuiInput,
@@ -21,11 +22,18 @@ const CustomBox = styled(MuiBox)(() => ({
   },
 }))
 
+// CUSTOM BOX COMPONENT
+const CustomInputLabel = styled(InputLabel)(() => ({
+  '&.MuiInputLabel-root': {
+    marginBottom: '5px',
+  },
+}))
+
 // CUSTOM INPUT COMPONENT
 const CustomInput = styled(MuiInput)(({ theme }) => ({
   // ROOT STYLES
   '&.MuiOutlinedInput-root': {
-    borderRadius: '9999px',
+    borderRadius: '12px',
   },
   '&.MuiOutlinedInput-root:hover': {
     boxShadow: '0 0 5px rgba(0, 0, 0, 0.5)',
@@ -38,10 +46,12 @@ const CustomInput = styled(MuiInput)(({ theme }) => ({
 
   // ADORNMENT STYLES
   '&.MuiInputBase-adornedStart .MuiSvgIcon-root': {
-    margin: '10px',
+    marginLeft: '10px',
+    marginRight: '10px',
   },
   '&.MuiInputBase-adornedEnd .MuiSvgIcon-root': {
-    margin: '10px',
+    marginLeft: '10px',
+    marginRight: '10px',
   },
 
   // ICON STYLES
@@ -93,7 +103,7 @@ const CustomFormHelperText = styled(MuiFormHelperText)(() => ({
   },
 }))
 
-const Input = ({ margin, errorText, formHelperText, ...props }) => {
+const Input = ({ label, margin, errorText, formHelperText, ...props }) => {
   // SETTING LOCAL VARIABLES
   // SETTING MARGIN CLASS
   let marginClass = ''
@@ -103,6 +113,11 @@ const Input = ({ margin, errorText, formHelperText, ...props }) => {
 
   return (
     <CustomBox className={marginClass}>
+      {label && (
+        <CustomInputLabel>
+          <Typography variant="body2">{label}</Typography>
+        </CustomInputLabel>
+      )}
       <CustomInput {...props} notched={false} />
       {formHelperText && !errorText && (
         <CustomFormHelperText>
