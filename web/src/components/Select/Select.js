@@ -6,10 +6,12 @@ import {
   MenuItem as MuiMenuItem,
   Typography,
   Chip,
+  InputLabel,
 } from '@mui/material'
 import { styled } from '@mui/material/styles'
 
 // CUSTOM COMPONENTS
+// CUSTOM BOX COMPONENT
 const CustomBox = styled(Box)(() => ({
   /* MARGIN STYLES */
   '&.MuiSelect-margin-small': {
@@ -22,6 +24,8 @@ const CustomBox = styled(Box)(() => ({
     marginBottom: '20px',
   },
 }))
+
+// CUSTOM MENU ITEM COMPONENT
 const CustomMenuItem = styled(MuiMenuItem)(() => ({
   // ROOT STYLES
   '&.MuiMenuItem-root': {
@@ -35,10 +39,19 @@ const CustomMenuItem = styled(MuiMenuItem)(() => ({
     flexGrow: '1',
   },
 }))
+
+// CUSTOM BOX COMPONENT
+const CustomInputLabel = styled(InputLabel)(() => ({
+  '&.MuiInputLabel-root': {
+    marginBottom: '5px',
+  },
+}))
+
+// CUSTOM SELECT COMPONENT
 const CustomSelect = styled(MuiSelect)(({ theme }) => ({
   // ROOT STYLES
   '&.MuiOutlinedInput-root': {
-    borderRadius: '9999px',
+    borderRadius: '12px',
   },
   '&.MuiOutlinedInput-root:hover': {
     boxShadow: '0 0 5px rgba(0, 0, 0, 0.5)',
@@ -119,6 +132,7 @@ const CustomFormHelperText = styled(MuiFormHelperText)(() => ({
 
 const Select = ({
   margin,
+  label,
   errorText,
   formHelperText,
   selectItems,
@@ -133,6 +147,11 @@ const Select = ({
 
   return (
     <CustomBox className={marginClass}>
+      {label && (
+        <CustomInputLabel>
+          <Typography variant="body2">{label}</Typography>
+        </CustomInputLabel>
+      )}
       <CustomSelect
         {...props}
         notched={false}
