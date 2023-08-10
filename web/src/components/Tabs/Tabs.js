@@ -5,7 +5,10 @@ import { styled } from '@mui/material/styles'
 const Tabs = styled(MuiTabs)(({ theme }) => ({
   '&.MuiTabs-root': {
     padding: '5px',
-    background: theme.palette.grey['200'],
+    background:
+      theme.palette.mode === 'light'
+        ? theme.palette.grey['200']
+        : theme.palette.grey['dark'],
     borderRadius: '9999px',
   },
 }))
