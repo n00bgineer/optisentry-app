@@ -100,7 +100,7 @@ const LandingPage = () => {
             </Typography>
             <Typography variant="body1" className="hero-subheadline">
               OptiSentry generates simplified performance & security reports for
-              your web apps from multiple locations across the world
+              your applications to keep it fast & security
             </Typography>
             <Box className="hero-cta-container">
               <Button
@@ -139,8 +139,8 @@ const LandingPage = () => {
             <img
               src={
                 isDarkMode
-                  ? 'https://res.cloudinary.com/dgu9rv3om/image/upload/q_auto:low/v1691659243/optisentry/Screenshot_from_2023-08-10_14-50-33_z0qqny.png'
-                  : 'https://res.cloudinary.com/dgu9rv3om/image/upload/q_auto:low/v1691659196/optisentry/Screenshot_from_2023-08-10_14-49-30_zqhfdu.png'
+                  ? 'https://res.cloudinary.com/dgu9rv3om/image/upload/q_auto:low/v1691673204/optisentry/report_dark_desktop.png'
+                  : 'https://res.cloudinary.com/dgu9rv3om/image/upload/q_auto:low/v1691673076/optisentry/report_light_desktop.png'
               }
               alt="OptiSentry Desktop Hero"
               className="hero-desktop-img"
@@ -149,8 +149,8 @@ const LandingPage = () => {
             <img
               src={
                 isDarkMode
-                  ? 'https://res.cloudinary.com/dgu9rv3om/image/upload/q_auto:low/v1691659561/optisentry/localhost_8910_report_ed0407e7-fe7f-4c03-993c-4d4b869d2733_iPhone_XR_1_nt5bfk.png'
-                  : 'https://res.cloudinary.com/dgu9rv3om/image/upload/q_auto:low/v1691659509/optisentry/localhost_8910_report_ed0407e7-fe7f-4c03-993c-4d4b869d2733_iPhone_XR_o6wavb.png'
+                  ? 'https://res.cloudinary.com/dgu9rv3om/image/upload/q_auto:low/v1691673465/optisentry/report_dark_mobile.png'
+                  : 'https://res.cloudinary.com/dgu9rv3om/image/upload/q_auto:low/v1691673433/optisentry/report_light_mobile.png'
               }
               alt="OptiSentry Mobile Hero"
               className="hero-mobile-img"
@@ -202,8 +202,8 @@ const LandingPage = () => {
               tags={['🚧 In Progress']}
             />
             <FeaturesCard
-              title="TraceScore"
-              content="OptiSentry evaluates and benchmarks your app's performance against multiple locations and uses multiple metrics like latency, response times, etc to create your app's TraceScore"
+              title="OptiScore&trade;"
+              content="OptiSentry evaluates and benchmarks your app's performance and security to create your app's OptiScore&trade;"
               image="https://res.cloudinary.com/dgu9rv3om/image/upload/q_auto:low/v1684181893/tracepath/assets/Cylinder_Short_Stack_x5_0003_y4w3f7.png"
               tags={['🚧 In Progress']}
             />
@@ -236,8 +236,12 @@ const LandingPage = () => {
                 '- Only 5 reports/mo',
                 '- Manual execution',
                 '- Access to all the servers',
-                <Typography component="div" key="TraceScore" variant="body1">
-                  - TraceScore isn&rsquo;t available{' '}
+                <Typography
+                  component="div"
+                  key="OptiScore&trade;"
+                  variant="body1"
+                >
+                  - OptiScore&trade; isn&rsquo;t available{' '}
                   <Chip
                     component="div"
                     color="default"
@@ -266,8 +270,8 @@ const LandingPage = () => {
                 '- Upto 50 reports/mo',
                 '- Schedule weekly reports',
                 '- Access to all the servers',
-                <Typography key="TraceScorePro" variant="TraceScore">
-                  - TraceScore is available{' '}
+                <Typography key="TraceScorePro" variant="OptiScore&trade;">
+                  - OptiScore&trade; is available{' '}
                   <Chip color="default" label="🚧 In Progress" />
                 </Typography>,
                 <Typography key="CompAnalPro" variant="body1">
