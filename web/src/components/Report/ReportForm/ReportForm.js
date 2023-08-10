@@ -379,11 +379,10 @@ const ReportForm = ({ loading, onSave, regions }) => {
           <form>
             <Select
               fullWidth={true}
-              margin="medium"
+              margin="small"
               label="📍 Select Server Location"
-              placeholder="📍 Select Server Location"
+              placeholder="Select a server Location"
               className="select-server"
-              size="small"
               defaultValue="default"
               startAdornment={<Storage />}
               selectItems={regions}
@@ -392,7 +391,7 @@ const ReportForm = ({ loading, onSave, regions }) => {
               value={selectedRegion}
             />
             <Input
-              placeholder="Enter URL"
+              placeholder="https://google.com"
               required={true}
               startAdornment={<Link />}
               fullWidth={true}
@@ -401,13 +400,12 @@ const ReportForm = ({ loading, onSave, regions }) => {
               color={urlErrorText !== '' ? 'error' : 'primary'}
               onInput={setUrlField}
               errorText={urlErrorText}
-              label="url"
-              size="small"
+              label="Enter your app's URL"
               disabled={loading}
             />
             <Button
               type="submit"
-              margin="medium"
+              margin="large"
               fullWidth={true}
               variant="contained"
               size="small"
