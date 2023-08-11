@@ -4,9 +4,12 @@
 
 **OptiSentry** is an open-source application performance and security monitoring system. Currently, for any given web application, it generates a report consisting of two parts:
 
-1. **Performance analysis**, which contains the web application's performance report generated against one of OptiSentry's diagnostic servers running on a cloud instance deployed at a specific location (e.g., Mumbai, Stockholm). The performance analysis is conducted using Google's `lighthouse` tool running on a headless browser of the rendering engine (i.e. webkit, chromium or firefox) or viewports of your choice.
+1. Performance analysis, which contains the web application's performance report generated against one of OptiSentry's diagnostic servers running on a cloud instance deployed at a specific location (e.g., Singapore, London, Oregon, N. Virginia). The performance analysis is conducted using Google's `lighthouse` tool running on a headless browser of the rendering engine (i.e. webkit, chromium or firefox) or viewports of your choice.
+2. Security analysis (WIP)
 
-2. **Security analysis** (WIP)
+This repository contains the **application client & server** for the OptiSentry system. It's a monorepo consisting of two workspaces:
+1. The **application client** for displaying the projects owned by the users and the reports generated for different projects, a explore page consisting of public reports of various applications, the account & project settings, amongst other things. All things client, goes into the `web` sub-directory.
+2. The **application server** which directs the diagnostic server to generate the performance & security report for an application on a cloud instance deployed, it connects to the database to store the information, amngst other things. All things server, goes into the `api` sub-directory.
 
 ## Setup
 
