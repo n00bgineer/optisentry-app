@@ -84,7 +84,7 @@ const MetricCard = ({
     const colors = {
       low: 'error',
       mid: 'warning',
-      high: 'primary',
+      high: 'success',
     }
     const normalisedScore =
       metricValue === 0 ? 0 : (metricValue / 1000).toFixed(2)
