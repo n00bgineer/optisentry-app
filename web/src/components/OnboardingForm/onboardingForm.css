@@ -1,7 +1,9 @@
-.onboarding-tabs{
-  margin: 20px 10px 0px;
-  width: calc(100% - 20px);
-}
 .onboarding-tab-panel{
   width: 100%;
+}
+.onboarding-descriptive-radio-container{
+  margin: 0px;
+  width: 100%;
+  padding: 10px 10px 0px;
+  margin-bottom: -20px;
 }

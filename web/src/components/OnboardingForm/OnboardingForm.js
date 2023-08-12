@@ -1,7 +1,7 @@
 // IMPORTING PACKAGES/MODULES
 import { useState } from 'react'
 
-import { AccountBalance, AssignmentInd } from '@mui/icons-material'
+import { AssignmentInd, Inventory2 } from '@mui/icons-material'
 import { Box, Typography } from '@mui/material'
 import { useRecoilState } from 'recoil'
 
@@ -14,9 +14,8 @@ import { UPDATE_USER_MUTATION } from 'src/components/User/EditUserCell'
 import { accountAtom, modalTypeAtom } from 'src/contexts/atoms'
 import './onboardingForm.css'
 
-import Tab from '../Tab/Tab'
+import DescriptiveRadio from '../DescriptiveRadio/DescriptiveRadio'
 import TabPanel from '../TabPanel/TabPanel'
-import Tabs from '../Tabs/Tabs'
 
 // INPUT FIELD VALIDATION METHODS
 /**
@@ -47,9 +46,25 @@ const validateDisplayNameLength = (displayName) => {
 }
 
 const OnboardingForm = () => {
+  // SETTING LOCAL VARIABLES
+  const radioOptions = [
+    {
+      value: 'indv',
+      name: 'Individual',
+      description: "Cheaper pricing, Can't invite other members",
+      icon: <AssignmentInd fontSize="large" />,
+    },
+    {
+      value: 'org',
+      name: 'Organisation',
+      description: 'Costlier pricing, Invite upto three members',
+      icon: <Inventory2 fontSize="large" />,
+    },
+  ]
+
   // SETTING LOCAL STATE
-  const [tabValue, setTabValue] = useState(0)
   const [displayName, setDisplayName] = useState('')
+  const [radioOptionValue, setRadioOptionValue] = useState('indv')
   const [isSubmissionInProcess, setIsSubmissionInProcess] = useState(false)
 
   // INPUT FIELD VALIDATION STATES
@@ -75,11 +90,10 @@ const OnboardingForm = () => {
   /**
    * @name setTab
    * @description METHOD TO SET TAB VALUE
-   * @param {*} event EVENT OBJECT
    * @param {*} value VALUE
    * @returns {undefined} undefined
    */
-  const setTab = (event, value) => setTabValue(value)
+  const setRadioOption = (value) => setRadioOptionValue(value)
 
   // METHODS
   /**
@@ -174,42 +188,32 @@ const OnboardingForm = () => {
           One last step
         </Typography>
         <Typography variant="body1" className="auth-form-subtitle">
-          Please select account type and enter your name
+          Select account type and enter your name
         </Typography>
       </Box>
-
-      <Tabs
-        value={tabValue}
-        onChange={setTab}
-        variant="fullWidth"
-        className="onboarding-tabs"
-        TabIndicatorProps={{
-          sx: { display: 'none' },
-        }}
+      <Box className="onboarding-descriptive-radio-container">
+        <DescriptiveRadio
+          radioOptions={radioOptions}
+          defaultValue={radioOptionValue}
+          setValue={setRadioOption}
+          name="account-type"
+          formLabel="Select an account type"
+        />
+      </Box>
+      <TabPanel
+        value="indv"
+        index={radioOptionValue}
+        className="onboarding-tab-panel"
       >
-        <Tab
-          label="Individual"
-          icon={<AssignmentInd fontSize="medium" />}
-          iconPosition="start"
-          size="large"
-        />
-        <Tab
-          label={'Organisation'}
-          icon={<AccountBalance fontSize="medium" />}
-          iconPosition="start"
-          size="large"
-        />
-      </Tabs>
-      <TabPanel value={0} index={tabValue} className="onboarding-tab-panel">
         <form className="auth-form onboarding-form" onSubmit={OnSubmitIndv}>
           <Input
-            placeholder="Enter your name"
+            placeholder="Harry Potter"
             required={true}
             startAdornment={<AssignmentInd />}
             fullWidth={true}
             type="text"
             value={displayName}
-            margin="large"
+            margin="medium"
             color={displayNameErrorText !== '' ? 'error' : 'primary'}
             onInput={setDisplayNameField}
             errorText={displayNameErrorText}
@@ -234,16 +238,20 @@ const OnboardingForm = () => {
           )}
         </form>
       </TabPanel>
-      <TabPanel value={1} index={tabValue} className="onboarding-tab-panel">
+      <TabPanel
+        value="org"
+        index={radioOptionValue}
+        className="onboarding-tab-panel"
+      >
         <form className="auth-form onboarding-form" onSubmit={OnSubmitOrg}>
           <Input
-            placeholder="Enter your organisation's name"
+            placeholder="Hogwarts"
             required={true}
-            startAdornment={<AccountBalance />}
+            startAdornment={<Inventory2 />}
             fullWidth={true}
             type="text"
+            margin="medium"
             value={displayName}
-            margin="large"
             color={displayNameErrorText !== '' ? 'error' : 'primary'}
             onInput={setDisplayNameField}
             errorText={displayNameErrorText}

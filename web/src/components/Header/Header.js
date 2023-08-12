@@ -29,7 +29,7 @@ const Header = () => {
       >
         <Link
           component="a"
-          href="https://twitter.com/n00bgineer/status/1654742809394692097?s=20"
+          href="https://twitter.com/n00bgineer/status/1689060225188601861?s=20"
           target="_blank"
         >
           Updates
