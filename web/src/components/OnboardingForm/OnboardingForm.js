@@ -213,7 +213,7 @@ const OnboardingForm = () => {
             fullWidth={true}
             type="text"
             value={displayName}
-            margin="large"
+            margin="medium"
             color={displayNameErrorText !== '' ? 'error' : 'primary'}
             onInput={setDisplayNameField}
             errorText={displayNameErrorText}
@@ -250,8 +250,8 @@ const OnboardingForm = () => {
             startAdornment={<Inventory2 />}
             fullWidth={true}
             type="text"
+            margin="medium"
             value={displayName}
-            margin="large"
             color={displayNameErrorText !== '' ? 'error' : 'primary'}
             onInput={setDisplayNameField}
             errorText={displayNameErrorText}
