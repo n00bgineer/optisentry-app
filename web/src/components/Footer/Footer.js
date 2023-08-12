@@ -56,8 +56,8 @@ const Footer = () => {
             </Typography>
           </Box>
           <Typography variant="body2" className="brand-description">
-            OptiSentry generates simplified performance and security reports for
-            your web apps from multiple locations across the world
+            OptiSentry generates simplified performance & security reports for
+            your applications to keep it fast & security
           </Typography>
           <Typography variant="body2" className="footer-copyright">
             Copyright &copy; n00bgineer 2023

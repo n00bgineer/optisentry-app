@@ -5,13 +5,13 @@ export const regions = () => {
   return db.region
     .findMany({
       // REMOVE WHILE TESTING LOCALLY
-      // where: {
-      //   NOT: {
-      //     regionName: {
-      //       contains: 'local',
-      //     },
-      //   },
-      // },
+      where: {
+        NOT: {
+          regionName: {
+            contains: 'local',
+          },
+        },
+      },
     })
     .then(async (regions) => {
       return await Promise.all(

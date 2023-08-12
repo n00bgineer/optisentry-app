@@ -1,13 +1,15 @@
 # OptiSentry Application Client & Server
 
+![OptiSentry Application](https://res.cloudinary.com/dgu9rv3om/image/upload/v1691673076/optisentry/report_light_desktop.png)
 
-<!-- ![OptiSentry]() -->
+**OptiSentry** is an open-source application performance and security monitoring system. Currently, for any given web application, it generates a report consisting of two parts:
 
-**OptiSentry** is an open-source application for performance and security monitoring. Currently, for any given web application's URL (e.g., pangea.cloud), it generates a report consisting of two parts:
+1. Performance analysis, which contains the web application's performance report generated against one of OptiSentry's diagnostic servers running on a cloud instance deployed at a specific location (e.g., Singapore, London, Oregon, N. Virginia). The performance analysis is conducted using Google's `lighthouse` tool running on a headless browser of the rendering engine (i.e. webkit, chromium or firefox) or viewports of your choice.
+2. Security analysis (WIP)
 
-1. **Performance analysis**, which contains the web application's performance report generated against one of OptiSentry's diagnostic servers (refer to the `optisentry-diagnostics` repository for details). These servers run on a cloud instance deployed at a specific location (e.g., Mumbai, Stockholm). The performance analysis is conducted using Google's `lighthouse` tool running on a headless chrome browser. However, unlike a typical Lighthouse report, OptiSentry presents the performance metrics in a jargon-free form that can be easily understood by non-technical stakeholders of a project.
-
-2. **Security tracerouting**, a unique feature offered by OptiSentry, helps visualize the routing path of packets along with their geographic location and IP reputation score to identify malicious IP addresses through which the IP packets might be passing. It combines tracerouting, IP geolocation, and IP threat/reputation intelligence.
+This repository contains the **application client & server** for the OptiSentry system. It's a monorepo consisting of two workspaces:
+1. The **application client** for displaying the projects owned by the users and the reports generated for different projects, a explore page consisting of public reports of various applications, the account & project settings, amongst other things. All things client, goes into the `web` sub-directory.
+2. The **application server** which directs the diagnostic server to generate the performance & security report for an application on a cloud instance deployed, it connects to the database to store the information, amngst other things. All things server, goes into the `api` sub-directory.
 
 ## Setup
 
@@ -18,7 +20,6 @@ OptiSentry consists of three parts:
 2. **Application Server**, which is the server that handles client requests for storing and accessing data, amongst other things, including communicating with the diagonostics server and replaying the information back to client.
 3. **Diagonostics Server**, which is the server that generates performance and security reports.
 
-This repository **only contains code for the client and the application server**. To access the code for the diagonostics server, checkout the `optisentry-diagonostics` server.
 
 **Prerequisites**
 
