@@ -1,0 +1,81 @@
+.onboarding-form-container{
+  width: 40%;
+}
+.onboarding-form-container > .auth-form-container{
+  width: 90%;
+  margin: auto;
+}
+.onboarding-visual-container{
+  width: 60%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+}
+.onboarding-visual-container > .onboarding-visual-image{
+  height: 75%;
+  border-radius: 25px;
+  margin-right: -50%;
+}
+
+@media screen and (max-width: 1700px) {
+  .onboarding-visual-container > .onboarding-visual-image{
+    margin-right: -75%;
+  }
+}
+
+@media screen and (max-width: 1600px) {
+  .onboarding-visual-container > .onboarding-visual-image{
+    margin-right: -100%;
+  }
+}
+
+@media screen and (max-width: 1400px) {
+  .onboarding-form-container{
+    width: 50%;
+  }
+  .onboarding-visual-container{
+    width: 50%;
+  }
+  .onboarding-visual-container > .onboarding-visual-image{
+    margin-right: -150%;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .onboarding-form-container{
+    width: 55%;
+  }
+  .onboarding-visual-container{
+    width: 45%;
+  }
+  .onboarding-visual-container > .onboarding-visual-image{
+    height: 85%;
+    margin-right: 0%;
+  }
+}
+
+
+@media screen and (max-width: 1000px) {
+  .onboarding-form-container{
+    width: 55%;
+  }
+  .onboarding-visual-container{
+    width: 45%;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .onboarding-form-container{
+    width: 100%;
+  }
+  .onboarding-form-container > .auth-form-container{
+    width: 100%;
+    padding: 10px;
+  }
+  .onboarding-visual-container{
+    width: 0%;
+  }
+}
