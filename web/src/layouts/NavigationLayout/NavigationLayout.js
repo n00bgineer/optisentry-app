@@ -81,7 +81,7 @@ const NavigationLayout = ({ children }) => {
   // SETTING BOTTOM ACTIONS
   const bottomActions = [
     {
-      label: 'Theme',
+      label: `${isDarkMode ? 'Dark' : 'Light'} mode`,
       selectedIcon: <DarkMode />,
       unselectedIcon: <LightMode />,
       isSelected: isDarkMode,
