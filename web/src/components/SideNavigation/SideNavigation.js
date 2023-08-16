@@ -1,6 +1,8 @@
 // IMPORTING PACKAGES/MODULES
 import { Box, Drawer as MuiDrawer, styled } from '@mui/material'
 
+import { Link, routes } from '@redwoodjs/router'
+
 import { useAuth } from 'src/auth'
 
 import SideNavigationElement from '../SideNavigationElement/SideNavigationElement'
@@ -12,7 +14,8 @@ const SideNavigationDrawer = styled(MuiDrawer)(() => ({
     padding: '10px',
   },
   '& .side-navigation-logo': {
-    marginBottom: '10px',
+    marginTop: '5px',
+    marginBottom: '5px',
   },
   '& .side-navigation-logo-small': {
     width: '30px',
@@ -54,12 +57,14 @@ const SideNavigation = ({
       className="side-navigation"
       {...props}
     >
-      <img
-        src={logoUrl}
-        alt="app logo"
-        className={['side-navigation-logo', logoSizeClass].join(' ')}
-        loading="lazy"
-      />
+      <Link to={routes.landing()}>
+        <img
+          src={logoUrl}
+          alt="app logo"
+          className={['side-navigation-logo', logoSizeClass].join(' ')}
+          loading="lazy"
+        />
+      </Link>
       {topActions && (
         <Box className="side-navigation-top-actions">
           {topActions.map((topActionItem) => {
