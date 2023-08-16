@@ -3,6 +3,7 @@ import {
   ListItemButton as MuiListItemButton,
   ListItemIcon,
   styled,
+  ListItemText,
 } from '@mui/material'
 
 import { Link as RedwoodLink } from '@redwoodjs/router'
@@ -11,42 +12,45 @@ import { Link as RedwoodLink } from '@redwoodjs/router'
 // CUSTOM LIST ITEM BUTTON COMPONENT
 const CustomListItemButton = styled(MuiListItemButton)(({ theme }) => ({
   '&.MuiListItemButton-root': {
-    borderRadius: '40%',
+    borderRadius: '12px',
     minWidth: 'unset',
     margin: '10px auto',
+    padding: '8px',
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
   },
   '& .MuiListItemIcon-root': {
     minWidth: 'unset',
+    marginRight: '8px',
   },
   '&.MuiListItemButton-small': {
-    width: '30px',
-    height: '30px',
+    fontSize: '30px',
   },
   '&.MuiListItemButton-medium': {
-    width: '50px',
-    height: '50px',
+    fontSize: '50px',
   },
   '&.MuiListItemButton-large': {
-    width: '60px',
-    height: '60px',
+    fontSize: '60px',
   },
   '&.MuiListItemButton-small .MuiSvgIcon-root': {
     width: '15px',
     height: '15px',
   },
   '&.MuiListItemButton-medium  .MuiSvgIcon-root': {
+    width: '25px',
+    height: '25px',
+  },
+  '&.MuiListItemButton-large .MuiSvgIcon-root': {
     width: '30px',
     height: '30px',
   },
-  '&.MuiListItemButton-large .MuiSvgIcon-root': {
-    width: '35px',
-    height: '35px',
-  },
   '&.Mui-selected': {
     background: `linear-gradient(to top, ${theme.palette.primary.dark}, ${theme.palette.primary.main}, ${theme.palette.primary.main})`,
+    color: theme.palette.common.black,
+  },
+  '&.Mui-selected .MuiSvgIcon-root': {
+    color: theme.palette.common.black,
   },
   '&.Mui-selected:hover': {
     boxShadow: `0 0 5px ${theme.palette.primary.main}`,
@@ -75,6 +79,7 @@ const SideNavigationElement = ({
   type,
   link,
   size,
+  label,
   onClick,
   isSelected,
   selectedIcon,
@@ -93,6 +98,7 @@ const SideNavigationElement = ({
         <ListItemIcon>
           {isSelected ? selectedIcon : unselectedIcon}
         </ListItemIcon>
+        <ListItemText>{label}</ListItemText>
       </ListItemButton>
     )
   else if (type === 'button')
@@ -101,6 +107,7 @@ const SideNavigationElement = ({
         <ListItemIcon>
           {isSelected ? selectedIcon : unselectedIcon}
         </ListItemIcon>
+        <ListItemText>{label}</ListItemText>
       </ListItemButton>
     )
   else return <></>
