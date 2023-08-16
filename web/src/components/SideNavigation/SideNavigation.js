@@ -12,6 +12,7 @@ import SideNavigationElement from '../SideNavigationElement/SideNavigationElemen
 const SideNavigationDrawer = styled(MuiDrawer)(() => ({
   '& .MuiPaper-root': {
     padding: '10px',
+    width: '275px',
   },
   '& .side-navigation-logo': {
     marginTop: '5px',
@@ -73,6 +74,7 @@ const SideNavigation = ({
                 type="link"
                 key={topActionItem.label}
                 link={topActionItem.link}
+                label={topActionItem.label}
                 isSelected={topActionItem.isSelected}
                 selectedIcon={topActionItem.selectedIcon}
                 unselectedIcon={topActionItem.unselectedIcon}
@@ -89,6 +91,7 @@ const SideNavigation = ({
               <SideNavigationElement
                 type="button"
                 key={bottomActionItem.label}
+                label={bottomActionItem.label}
                 selectedIcon={bottomActionItem.selectedIcon}
                 unselectedIcon={bottomActionItem.unselectedIcon}
                 isSelected={bottomActionItem.isSelected}
