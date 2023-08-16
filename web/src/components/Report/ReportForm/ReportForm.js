@@ -396,7 +396,7 @@ const ReportForm = ({ loading, onSave, regions }) => {
               startAdornment={<Link />}
               fullWidth={true}
               value={url}
-              margin="large"
+              margin="medium"
               color={urlErrorText !== '' ? 'error' : 'primary'}
               onInput={setUrlField}
               errorText={urlErrorText}
